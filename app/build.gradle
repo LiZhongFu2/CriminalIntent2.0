@@ -1,0 +1,29 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26//编译的Sdk版本
+    buildToolsVersion "26.0.2"
+
+    defaultConfig {
+        applicationId "com.example.hufan.criminalintent20"
+        minSdkVersion 17//支持的最低版本
+        targetSdkVersion 26
+        versionCode 1//版本号
+        versionName "1.0"//版本名
+    }
+    buildTypes {
+        release {
+            //是否进行混淆
+            minifyEnabled false
+            //混淆的文件位置
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    //编译libs文件夹下的所有jar包
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:26.1.0'
+}
